@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo · Dark Shop</title>
+<meta name="description" content="Catálogo Dark Shop — vapes desechables de 4.500 a 50.000 puffs. Cuenca y envíos a todo el Ecuador.">
+<meta property="og:title" content="Catálogo · Dark Shop">
+<meta property="og:description" content="Vapes desechables de 4.500 a 50.000 puffs. Cuenca y envíos a todo el Ecuador.">
+<meta property="og:image" content="pagina-1.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0A0A0B;
+  --ink-2:#131315;
+  --line:#26262A;
+  --gold:#C9A24B;
+  --gold-hi:#F2D89A;
+  --violet:#7A5CFF;
+  --bone:#EDEAE3;
+  --muted:#8B8880;
+  --rail:56px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--ink);color:var(--bone);
+  font-family:'Archivo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:72px 0 44px;text-align:center;
+  border-bottom:1px solid var(--line);
+}
+.hero::before{
+  content:"";position:absolute;left:50%;top:34px;
+  width:min(620px,92vw);height:190px;transform:translateX(-50%);
+  background:radial-gradient(ellipse at center,rgba(122,92,255,.30),transparent 68%);
+  filter:blur(26px);pointer-events:none;
+}
+.eyebrow{
+  position:relative;font-size:11px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 18px;
+}
+.wordmark{
+  position:relative;margin:0;
+  font-family:'Instrument Serif',Georgia,serif;font-weight:400;
+  font-size:clamp(52px,15vw,104px);line-height:.94;letter-spacing:-.01em;
+  color:var(--gold-hi);
+  text-shadow:0 0 28px rgba(122,92,255,.45),0 0 2px rgba(242,216,154,.6);
+}
+.wordmark span{display:block}
+.tagline{
+  position:relative;margin:20px auto 0;max-width:30ch;
+  font-size:16px;line-height:1.55;color:#B9B5AC;
+}
+.specs{
+  position:relative;margin:26px 0 0;padding:0;list-style:none;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;
+}
+.specs li{
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--line);border-radius:999px;padding:7px 13px;color:#9B978E;
+}
+
+/* ---------- BOTONES ---------- */
+.actions{position:relative;display:flex;flex-direction:column;gap:10px;margin:30px auto 0;max-width:330px}
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 20px;border-radius:2px;text-decoration:none;
+  font-size:13px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  border:1px solid var(--line);background:var(--ink-2);color:var(--bone);
+  transition:border-color .18s,color .18s,background .18s,transform .18s;
+}
+.btn:hover{border-color:var(--gold);color:var(--gold-hi);transform:translateY(-1px)}
+.btn-gold{background:var(--gold);border-color:var(--gold);color:#10100E}
+.btn-gold:hover{background:var(--gold-hi);border-color:var(--gold-hi);color:#10100E}
+.btn:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+/* ---------- RAIL + CATÁLOGO ---------- */
+.catalog{position:relative;padding:44px 0 8px}
+.rail{
+  position:fixed;left:16px;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:9px;z-index:5;
+}
+.rail b{
+  display:block;width:2px;height:24px;border-radius:2px;
+  background:#2C2C31;transition:background .3s,box-shadow .3s;
+}
+.rail b.on{background:var(--violet);box-shadow:0 0 9px var(--violet)}
+@media (max-width:880px){.rail{display:none}}
+
+.sheet{margin:0 0 26px;border:1px solid var(--line);background:var(--ink-2)}
+.sheet figcaption{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:11px 14px;border-bottom:1px solid var(--line);
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+}
+.sheet figcaption b{color:var(--gold);font-weight:700}
+
+/* ---------- INFO ---------- */
+.info{border-top:1px solid var(--line);padding:44px 0 0;margin-top:22px}
+.info h2{
+  font-family:'Instrument Serif',Georgia,serif;font-weight:400;
+  font-size:30px;margin:0 0 22px;color:var(--gold-hi);
+}
+.rows{border-top:1px solid var(--line)}
+.row{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--line)}
+.row dt{
+  flex:0 0 108px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--muted);padding-top:3px;
+}
+.row dd{margin:0;font-size:15px;line-height:1.5;color:#CFCBC3}
+.row dd a{color:var(--gold-hi);text-decoration:underline;text-underline-offset:3px}
+.acct{
+  display:inline-block;margin-top:9px;padding:11px 13px;
+  border:1px solid var(--line);border-left:2px solid var(--gold);
+  font-size:13px;line-height:1.7;color:#B4B0A8;letter-spacing:.01em;
+}
+
+/* ---------- PIE ---------- */
+footer{padding:40px 0 60px;text-align:center}
+.legal{
+  margin:26px auto 0;max-width:44ch;font-size:11px;line-height:1.6;color:#6E6B65;
+}
+.legal strong{color:#96928B;font-weight:500}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Cuenca · Ecuador</p>
+    <h1 class="wordmark"><span>Dark</span><span>Shop</span></h1>
+    <p class="tagline">Catálogo completo de vapes desechables. Precios, puffs y modelos disponibles.</p>
+    <ul class="specs">
+      <li>4.500 – 50.000 puffs</li>
+      <li>Desde $4,99</li>
+      <li>Envíos a todo el país</li>
+    </ul>
+    <div class="actions">
+      <a class="btn btn-gold" href="#catalogo">Ver catálogo</a>
+      <a class="btn" href="https://chat.whatsapp.com/BTjXPSY2j3N1pfetZm30Mz?mode=gi_t" target="_blank" rel="noopener">Grupo de ofertas</a>
+      <a class="btn" href="catalogo-dark-shop.pdf" download>Descargar PDF</a>
+    </div>
+  </div>
+</header>
+
+<nav class="rail" aria-hidden="true">
+  <b></b><b></b><b></b><b></b><b></b><b></b>
+</nav>
+
+<main class="catalog" id="catalogo">
+  <div class="wrap">
+    <figure class="sheet"><figcaption><span>Bienvenida y cuidados</span><b>01</b></figcaption><img src="pagina-1.jpg" alt="Página 1 del catálogo: bienvenida, cuidado del dispositivo y advertencias" loading="eager" width="910" height="1287"></figure>
+    <figure class="sheet"><figcaption><span>4.500 – 7.500 puffs</span><b>02</b></figcaption><img src="pagina-2.jpg" alt="Página 2 del catálogo: modelos de 4.500 a 7.500 puffs con precios" loading="lazy" width="910" height="1287"></figure>
+    <figure class="sheet"><figcaption><span>7.000 – 15.000 puffs</span><b>03</b></figcaption><img src="pagina-3.jpg" alt="Página 3 del catálogo: modelos de 7.000 a 15.000 puffs con precios" loading="lazy" width="910" height="1287"></figure>
+    <figure class="sheet"><figcaption><span>15.000 – 25.000 puffs</span><b>04</b></figcaption><img src="pagina-4.jpg" alt="Página 4 del catálogo: modelos de 15.000 a 25.000 puffs con precios" loading="lazy" width="910" height="1287"></figure>
+    <figure class="sheet"><figcaption><span>25.000 – 40.000 puffs</span><b>05</b></figcaption><img src="pagina-5.jpg" alt="Página 5 del catálogo: modelos de 25.000 a 40.000 puffs con precios" loading="lazy" width="910" height="1287"></figure>
+    <figure class="sheet"><figcaption><span>50.000 puffs y más</span><b>06</b></figcaption><img src="pagina-6.jpg" alt="Página 6 del catálogo: modelos de 50.000 puffs y línea premium" loading="lazy" width="910" height="1287"></figure>
+  </div>
+
+  <section class="info">
+    <div class="wrap">
+      <h2>Cómo comprar</h2>
+      <dl class="rows">
+        <div class="row"><dt>Pedidos</dt><dd>Escríbenos por Instagram y te armamos el pedido en el chat.</dd></div>
+        <div class="row"><dt>Pago</dt><dd>Efectivo o transferencia.<br><span class="acct">Banco Pichincha · Cuenta de ahorro<br>Nº 2214103638<br>Cédula 0107210205<br>Miguel Villavicencio</span></dd></div>
+        <div class="row"><dt>Envío Cuenca</dt><dd>Desde $1,50, según el sector.</dd></div>
+        <div class="row"><dt>Contra entrega</dt><dd>Solo dentro de Cuenca. Fuera de la ciudad el pago va por transferencia.</dd></div>
+        <div class="row"><dt>Otras ciudades</dt><dd>$7,50 a cualquier ciudad del Ecuador.</dd></div>
+        <div class="row"><dt>Retiro</dt><dd>Sin local físico. Punto de retiro por Jardines de San Joaquín — <a href="https://maps.app.goo.gl/FkiXvTWHNzKwH6Rc6" target="_blank" rel="noopener">ver ubicación</a></dd></div>
+        <div class="row"><dt>Ofertas</dt><dd><a href="https://chat.whatsapp.com/BTjXPSY2j3N1pfetZm30Mz?mode=gi_t" target="_blank" rel="noopener">Grupo de WhatsApp</a> — publicamos las ofertas de cada semana.</dd></div>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="actions">
+      <a class="btn btn-gold" href="https://chat.whatsapp.com/BTjXPSY2j3N1pfetZm30Mz?mode=gi_t" target="_blank" rel="noopener">Unirme al grupo de ofertas</a>
+      <a class="btn" href="catalogo-dark-shop.pdf" download>Descargar catálogo en PDF</a>
+    </div>
+    <p class="legal">
+      <strong>Venta exclusiva para mayores de edad.</strong> Estos productos contienen nicotina, una sustancia adictiva. No recomendados para personas con condiciones médicas sin orientación profesional. Precios y disponibilidad sujetos a cambio.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bars = document.querySelectorAll('.rail b');
+  var sheets = document.querySelectorAll('.sheet');
+  if(!('IntersectionObserver' in window) || !bars.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var i = Array.prototype.indexOf.call(sheets, e.target);
+      if(i > -1 && bars[i]) bars[i].classList.toggle('on', e.isIntersecting);
+    });
+  }, {rootMargin:'-45% 0px -45% 0px'});
+  sheets.forEach(function(s){ io.observe(s); });
+})();
+</script>
+</body>
+</html>
